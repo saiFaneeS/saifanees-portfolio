@@ -1,4 +1,4 @@
-import Link from "next/link";
+'import Link from "next/link";
 import Layout from "./Layout";
 import Image from "next/image";
 import { ArrowUpRightFromCircle } from "lucide-react";
@@ -42,3 +42,4 @@ export default function Home() {
     </Layout>
   );
 }
+'

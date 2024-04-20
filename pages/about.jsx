@@ -12,10 +12,10 @@ const about = () => {
           <h2 className="text-3xl font-semibold">About </h2>
           <div className="h-[2px] w-full bg-current mb-4"></div>
           <p className="text-lg">
-            Hey, I'm Saif Anees and I'm a full-stack web engineer with a focus
+            Hey, I&apos;m Saif Anees and I&apos;m a full-stack web engineer with a focus
             on building user friendly websites. I Love Working at the
             intersection Of Creativity. I have a experience building websites
-            for small to medium-sized businesses. When I'm not building, I'm
+            for small to medium-sized businesses. When I&apos;m not building, I&apos;m
             learning new stuff.
           </p>
         </div>
