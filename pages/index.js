@@ -1,12 +1,19 @@
-'import Link from "next/link";
+import Link from "next/link";
 import Layout from "./Layout";
 import Image from "next/image";
 import { ArrowUpRightFromCircle } from "lucide-react";
+import { useNavbar } from "@/context/Navbar";
 
 export default function Home() {
+  const { isActive } = useNavbar();
+
   return (
     <Layout>
-      <div className="h-screen flex justify-start items-start px-24 py-44">
+      <div
+        className={`h-screen flex justify-start items-start px-24 py-44 absolute w-full slide-in-bottom ${
+          isActive ? "slide-in-top" : ""
+        }`}
+      >
         <div className="text-6xl font-extrabold">
           <h1 className="leading-none flex justify-center items-center">
             FULL<div className="w-16 mx-4 h-2 inline-block bg-slate-950"></div>
@@ -42,4 +49,3 @@ export default function Home() {
     </Layout>
   );
 }
-'

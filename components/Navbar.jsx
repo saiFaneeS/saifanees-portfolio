@@ -1,17 +1,25 @@
+import { useNavbar } from "@/context/Navbar";
 import { ArrowUpRightFromCircle, LayoutGrid } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 
 const Navbar = () => {
-  const [menu, setMenu] = useState(false);
+  const { isActive, setIsActive } = useNavbar();
   const [currentTime, setCurrentTime] = useState("");
+
+  const router = useRouter();
+
+  const toggleNavbar = () => {
+    setIsActive(!isActive);
+  };
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       const date = new Date();
       const hours = date.getHours();
       const minutes = date.getMinutes();
-      const formattedTime = `${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
+      const formattedTime = `${hours}:${minutes < 10 ? "0" : ""}${minutes}`;
       setCurrentTime(formattedTime);
     }, 1000);
 
@@ -20,47 +28,71 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="absolute top-0 w-full flex gap-4 items-center justify-between px-24 pt-24 z-20">
+      <div
+        className={`absolute top-0 w-full flex gap-4 items-center justify-between px-24 pt-24 z-20`}
+      >
         <Link href={"/"} className="text-lg font-bold">
           SAIF ANEES
         </Link>
         <div className="text-lg font-bold flex gap-4 items-center justify-center">
           <span>{currentTime}</span>
-          <span className="cursor-pointer" onClick={() => setMenu(!menu)}>
+          <span
+            className="cursor-pointer"
+            onClick={() => setIsActive(!isActive)}
+          >
             <LayoutGrid size={32} />
           </span>
         </div>
       </div>
       <div
-        className={`h-screen w-full fixed left-0 bg-white bg-opacity-70 backdrop-blur-md border-b border-b-black flex flex-col justify-center px-[25%] py-4 z-10 transition-all delay-75 duration-1000 ${
-          menu ? "top-0" : "top-[-110%]"
+        className={`h-screen w-full fixed left-0 bg- bg-opacity-70 backdrop-blur-md border-b border-b-black flex flex-col justify-center px-[25%] py-4 z-10 transition-all delay-75 duration-1000 ${
+          isActive ? "top-0" : "top-[-110%]"
         }`}
       >
-        <div className="font-semibold flex flex-col text-4xl leading-none mb-8 -ml-9 pt-20">
-          <Link
-            href={"/"}
-            className={`hover:ml-12 transition-all delay-75 duration-700 w-fit`}
-          >
-            <span className="text-base font-medium mr-2">01</span>HOME
-          </Link>
-          <Link
-            href={"/works"}
-            className={`hover:ml-12 transition-all delay-75 duration-700 w-fit`}
+        <div className="font-semibold flex flex-col text-4xl leading-none mb-8 -ml-9 pt-20 list-none">
+        <li
+            onClick={() => [
+              setIsActive(false),
+              setTimeout(() => {
+                router.push("/");
+              }, 1000),
+            ]}
+            className={`hover:ml-12 transition-all delay-75 duration-500 w-fit cursor-pointer`}
+          >            <span className="text-base font-medium mr-2">01</span>HOME
+          </li>
+          <li
+            onClick={() => [
+              setIsActive(false),
+              setTimeout(() => {
+                router.push("/works");
+              }, 1000),
+            ]}
+            className={`hover:ml-12 transition-all delay-75 duration-500 w-fit cursor-pointer`}
           >
             <span className="text-base font-medium mr-2">02</span>WORKS
-          </Link>
-          <Link
-            href={"/about"}
-            className={`hover:ml-12 transition-all delay-75 duration-700 w-fit`}
+          </li>
+          <li
+            onClick={() => [
+              setIsActive(false),
+              setTimeout(() => {
+                router.push("/about");
+              }, 1000),
+            ]}
+            className={`hover:ml-12 transition-all delay-75 duration-500 w-fit cursor-pointer`}
           >
             <span className="text-base font-medium mr-2">03</span>ABOUT
-          </Link>
-          <Link
-            href={"/contact"}
-            className={`hover:ml-12 transition-all delay-75 duration-700 w-fit`}
+          </li>
+          <li
+            onClick={() => [
+              setIsActive(false),
+              setTimeout(() => {
+                router.push("/contact");
+              }, 1000),
+            ]}
+            className={`hover:ml-12 transition-all delay-75 duration-500 w-fit cursor-pointer`}
           >
             <span className="text-base font-medium mr-2">04</span>CONTACT
-          </Link>
+          </li>
         </div>
         <div className="flex gap-6 items-center">
           <Link

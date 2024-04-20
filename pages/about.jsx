@@ -3,20 +3,27 @@ import Layout from "./Layout";
 import Image from "next/image";
 import { ArrowDownToDot, Circle } from "lucide-react";
 import Link from "next/link";
+import { useNavbar } from "@/context/Navbar";
 
 const about = () => {
+  const { isActive } = useNavbar();
+
   return (
     <Layout>
-      <div className="h-screen overflow-hidden relative flex flex-col justify-center gap-8 p-24">
+      <div
+        className={`h-screen overflow-hidden relative flex flex-col justify-center gap-8 p-24 slide-in-bottom ${
+          isActive ? "slide-in-top" : ""
+        }`}
+      >
         <div className="h-full w-full flex flex-col justify-center lg:w-4/5 pt-16">
           <h2 className="text-3xl font-semibold">About </h2>
           <div className="h-[2px] w-full bg-current mb-4"></div>
           <p className="text-lg">
-            Hey, I&apos;m Saif Anees and I&apos;m a full-stack web engineer with a focus
-            on building user friendly websites. I Love Working at the
+            Hey, I&apos;m Saif Anees and I&apos;m a full-stack web engineer with
+            a focus on building user friendly websites. I Love Working at the
             intersection Of Creativity. I have a experience building websites
-            for small to medium-sized businesses. When I&apos;m not building, I&apos;m
-            learning new stuff.
+            for small to medium-sized businesses. When I&apos;m not building,
+            I&apos;m learning new stuff.
           </p>
         </div>
         <div className="w-full flex justify-between items-end mb-4">

@@ -185,11 +185,26 @@
   animation: slideInBottom 1s ease-out 1s backwards;
 }
 
+@keyframes slideIntop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.slide-in-top {
+  position: absolute;
+  animation: slideIntop 1s ease-out forwards;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
+
 .animate-rotate {
   animation: spin 12s linear infinite;
 }

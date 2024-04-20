@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "./Layout";
 import Image from "next/image";
 import Link from "next/link";
+import { useNavbar } from "@/context/Navbar";
 
 const Works = () => {
   const projects = [
@@ -10,6 +11,8 @@ const Works = () => {
     { name: "Modern Standards Luxury Motors", image: "/saif.jpg" },
     { name: "Oh GHAD!", image: "/husban.png" },
   ];
+
+  const { isActive } = useNavbar();
 
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -28,12 +31,15 @@ const Works = () => {
 
   return (
     <Layout>
-      <div className="h-screen relative flex justify-between items-end gap-8 px-24 py-24">
+      <div
+        className={`h-screen flex justify-between items-end gap-8 px-24 py-24 relative w-full slide-in-bottom ${
+          isActive ? "slide-in-top" : ""
+        }`}
+      >
         <Link
           href={"/"}
           className="h-96 aspect-video relative hover:brightness-90 cursor-pointer transition-all"
         >
-          {/* <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white bg-opacity-80 px-12 py-2 z-10">Visit</button> */}
           <Image
             src={projects[currentProjectIndex]?.image}
             alt=""
@@ -53,9 +59,7 @@ const Works = () => {
               key={index}
               onMouseOver={() => setCurrentProjectIndex(index)}
               className={`h-full w-full p-2 transition-all ${
-                index === currentProjectIndex
-                  ? "bg-gray-950 text-white"
-                  : ""
+                index === currentProjectIndex ? "bg-gray-950 text-white" : ""
               }`}
             >
               <span>{project.name}</span>
