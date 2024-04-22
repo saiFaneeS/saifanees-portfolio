@@ -1,74 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Layout from "./Layout";
-import Image from "next/image";
-import Link from "next/link";
-import { useNavbar } from "@/context/Navbar";
+import Projects from "@/components/Projects";
 
-const Works = () => {
-  const projects = [
-    { name: "Agency", image: "/saif.jpg" },
-    { name: "MS Real Estate", image: "/husban.png" },
-    { name: "Modern Standards Luxury Motors", image: "/saif.jpg" },
-    { name: "Oh GHAD!", image: "/husban.png" },
-  ];
-
-  const { isActive } = useNavbar();
-
-  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setScrollPosition(scrollTop);
-      const index = Math.floor(scrollTop / window.innerHeight);
-      setCurrentProjectIndex(index);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+const works = () => {
   return (
     <Layout>
-      <div
-        className={`h-screen flex justify-between items-end gap-8 px-24 py-24 relative w-full slide-in-bottom ${
-          isActive ? "slide-in-top" : ""
-        }`}
-      >
-        <Link
-          href={"/"}
-          className="h-96 aspect-video relative hover:brightness-90 cursor-pointer transition-all"
-        >
-          <Image
-            src={projects[currentProjectIndex]?.image}
-            alt=""
-            width={"1000"}
-            height={"1000"}
-            className="w-full h-full object-cover"
-          />
-        </Link>
-        <div className="flex flex-col w-full">
-          <div className="flex gap-6 justify-between items-center">
-            <h2 className="text-3xl font-semibold">Works</h2>
-            <p className="text-lg font-medium">{projects?.length}</p>
-          </div>
-          <div className="h-[2px] w-full bg-current mb-4"></div>
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              onMouseOver={() => setCurrentProjectIndex(index)}
-              className={`h-full w-full p-2 transition-all ${
-                index === currentProjectIndex ? "bg-gray-950 text-white" : ""
-              }`}
-            >
-              <span>{project.name}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+      <Projects />
     </Layout>
   );
 };
 
-export default Works;
+export default works;

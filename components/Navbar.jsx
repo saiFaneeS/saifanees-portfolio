@@ -5,14 +5,11 @@ import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 
 const Navbar = () => {
-  const { isActive, setIsActive } = useNavbar();
+  const { isActive, setIsActive, pageChanged, setPageChanged } = useNavbar();
   const [currentTime, setCurrentTime] = useState("");
 
   const router = useRouter();
-
-  const toggleNavbar = () => {
-    setIsActive(!isActive);
-  };
+  const path = router.pathname;
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -29,7 +26,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`absolute top-0 w-full flex gap-4 items-center justify-between px-24 pt-24 z-20`}
+        className={`fixed top-0 w-full flex gap-4 items-center justify-between px-24 max-lg:px-16 max-md:px-12 max-sm:px-4 pt-24 z-20`}
       >
         <Link href={"/"} className="text-lg font-bold">
           SAIF ANEES
@@ -50,19 +47,23 @@ const Navbar = () => {
         }`}
       >
         <div className="font-semibold flex flex-col text-4xl leading-none mb-8 -ml-9 pt-20 list-none">
-        <li
+          <li
             onClick={() => [
               setIsActive(false),
+              path === "/" ? "" : setPageChanged(true),
               setTimeout(() => {
                 router.push("/");
               }, 1000),
             ]}
             className={`hover:ml-12 transition-all delay-75 duration-500 w-fit cursor-pointer`}
-          >            <span className="text-base font-medium mr-2">01</span>HOME
+          >
+            {" "}
+            <span className="text-base font-medium mr-2">01</span>HOME
           </li>
           <li
             onClick={() => [
               setIsActive(false),
+              path === "/works" ? "" : setPageChanged(true),
               setTimeout(() => {
                 router.push("/works");
               }, 1000),
@@ -74,6 +75,7 @@ const Navbar = () => {
           <li
             onClick={() => [
               setIsActive(false),
+              path === "/about" ? "" : setPageChanged(true),
               setTimeout(() => {
                 router.push("/about");
               }, 1000),
@@ -85,6 +87,7 @@ const Navbar = () => {
           <li
             onClick={() => [
               setIsActive(false),
+              path === "/contact" ? "" : setPageChanged(true),
               setTimeout(() => {
                 router.push("/contact");
               }, 1000),
@@ -96,19 +99,19 @@ const Navbar = () => {
         </div>
         <div className="flex gap-6 items-center">
           <Link
-            href={"/"}
+            href={"/https://github.com/saiFaneeS"}
             className="flex gap-2 items-center text-base font-semibold"
           >
             <ArrowUpRightFromCircle size={18} strokeWidth={2.4} />
             Github
           </Link>
-          <Link
+          {/* <Link
             href={"/"}
             className="flex gap-2 items-center text-base font-semibold"
           >
             <ArrowUpRightFromCircle size={18} strokeWidth={2.4} />
             Behance
-          </Link>
+          </Link> */}
         </div>
       </div>
     </>
