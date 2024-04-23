@@ -113,13 +113,13 @@ const About = () => {
               GitHub
             </div>
           </div>
-          <Link
+          {/* <Link
             href={"/"}
             className="flex gap-2 items-center text-base font-medium mt-4"
           >
             <ArrowDownToDot size={18} />
             resume
-          </Link>
+          </Link> */}
         </div>
 
         {/* <div className="w-full flex justify-end mb-4">
