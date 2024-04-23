@@ -20,7 +20,7 @@ const Contact = () => {
           <h2 className="text-3xl font-semibold">Contact</h2>
           <div className="h-[2px] w-full bg-current mb-6"></div>
           <div className="flex flex-wrap justify-between items-center gap-6">
-            <div className="flex flex-wrap gap-x-6 gap-y-3 items-start leading-none">
+            <div className="flex flex-wrap gap-x-6 gap-y-3 items-start leading-none max-sm:flex-col">
               <p className="text-lg font-semibold">MAIL</p>
               <Link
                 href="mailto:saifanees11@gmail.com"
@@ -29,12 +29,13 @@ const Contact = () => {
                 saifanees11@gmail.com
               </Link>
             </div>
-            <div className="flex flex-wrap gap-x-6 gap-y-3 items-start">
+            <div className="flex flex-wrap gap-x-6 gap-y-3 items-start max-sm:flex-col">
               <p className="text-lg font-semibold text-nowrap leading-none">
                 SOCAIL MEDIA
               </p>
               <ul className="flex flex-wrap leading-none gap-6">
                 <Link
+                  target="_blank"
                   href={
                     "https://www.linkedin.com/in/saif-anees/?originalSubdomain=pk"
                   }
@@ -44,7 +45,8 @@ const Contact = () => {
                   Linkedin
                 </Link>
                 <Link
-                  href={"/"}
+                  target="_blank"
+                  href={"https://www.instagram.com/saifullah_anees/"}
                   className="flex gap-2 items-center text-lg font-medium"
                 >
                   <ArrowUpRightFromCircle size={18} strokeWidth={2.4} />

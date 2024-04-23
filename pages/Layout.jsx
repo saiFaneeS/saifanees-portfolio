@@ -3,17 +3,18 @@ import React from "react";
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <div className="relative">
       <Navbar />
       <div>{children}</div>
-      <div>
+      {/* <>
         <svg
-          viewBox="0 0 200 200"
+          viewBox="0 0 200 100"
           xmlns="http://www.w3.org/2000/svg"
-          className="fixed top-0 -z-10 opacity-20 grayscale"
+          className="fixed h-full w-full object-fill border border-red-500 top-0 max-md:-top-[5%] left-0 -z-10 opacity-20 grayscale"
         >
-          <filter id="noiseFilter">
+          <filter id="noiseFilter" className="h-screen w-full">
             <feTurbulence
+            className="h-screen w-full"
               type="fractalNoise"
               baseFrequency="10"
               numOctaves="3"
@@ -21,10 +22,10 @@ const Layout = ({ children }) => {
             />
           </filter>
 
-          <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+          <rect className="h-screen w-screen" filter="url(#noiseFilter)" />
         </svg>
-      </div>
-    </>
+      </> */}
+    </div>
   );
 };
 

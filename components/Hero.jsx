@@ -26,15 +26,15 @@ export default function Hero() {
             STACK
           </h1>
         </div>
-        <div className="overflow-hidden">
-          <h1 className="leading-none text-slide-in-bottom break-words">
+        <div className="overflow-hidden sm:-mr-4">
+          <h1 className="leading-none text-slide-in-bottom max-sm:break-words">
             DEVELOPER
           </h1>
         </div>
         <ul className="flex gap-6">
           <div className="overflow-hidden">
             <Link
-              href={"/https://github.com/saiFaneeS"}
+              href={"/works"}
               className="flex gap-2 items-center text-lg font-medium text-slide-in-bottom"
             >
               <ArrowUpRightFromCircle size={18} strokeWidth={2.4} />
@@ -43,7 +43,8 @@ export default function Hero() {
           </div>
           <div className="overflow-hidden">
             <Link
-              href={"/"}
+              target="_blank"
+              href={"https://github.com/saiFaneeS"}
               className="flex gap-2 items-center text-lg font-medium text-slide-in-bottom"
             >
               <ArrowUpRightFromCircle size={18} strokeWidth={2.4} />
@@ -51,31 +52,29 @@ export default function Hero() {
             </Link>
           </div>
         </ul>
-
       </div>
-        <div className="h-44 max-sm:h-36 w-44 max-sm:w-36 relative -mb-6 -ml-12 max-sm:-ml-8">
-          <Image
-            src={"/circular-name-img.png"}
-            height={500}
-            width={500}
-            className="h-16 max-sm:h-12 w-16 max-sm:w-12 object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          />
-          <Image
-            src={"/circular-name.png"}
-            height={500}
-            width={500}
-            className="h-full w-full object-contain animate-rotate"
-          />
-        </div>
-      {/*       
-      <div className="w-60 aspect-square max-lg:w-48 overflow-hidden absolute right-24 max-lg:right-16 max-md:right-12 max-sm:right-4 bottom-[4vw]">
+      <div className="h-44 max-sm:h-36 w-44 max-sm:w-36 relative -mb-6 -ml-12 max-sm:-ml-8">
+        <Image
+          src={"/circular-name-img.png"}
+          height={500}
+          width={500}
+          className="h-16 max-sm:h-12 w-16 max-sm:w-12 object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        />
+        <Image
+          src={"/circular-name.png"}
+          height={500}
+          width={500}
+          className="h-full w-full object-contain animate-rotate"
+        />
+      </div>
+      <div className="w-40 max-md:w-32 max-sm:w-40 aspect-square lg:-mb-6 md:-mb-5 sm:-mb-4 max-lg:w-48 overflow-hidden absolute right-24 max-lg:right-16 max-md:right-12 max-sm:right-4 bottom-[4vw]">
         <Image
           src={"/saif.jpg"}
           className="w-full h-full object-cover text-slide-in-bottom"
           width={1000}
           height={1000}
         />
-      </div> */}
+      </div>
     </div>
   );
 }

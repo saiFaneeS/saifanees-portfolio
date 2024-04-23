@@ -17,6 +17,8 @@ const About = () => {
           isActive ? "slide-out-top" : "slide-in-bottom"
         } ${pageChanged ? "hidden" : ""}`}
       >
+        <div className="fixed nav-gradient w-full h-48 top-0 left-0 md:hidden"></div>
+
         <div className="h-full w-full flex flex-col justify-center lg:w-4/5 pt-16">
           <h2 className="text-3xl font-semibold">About </h2>
           <div className="h-[2px] w-full bg-current mb-4 shrink-0"></div>
@@ -29,7 +31,7 @@ const About = () => {
           </p>
           <p className="text-lg font-semibold text-slate-950 my-4">Tools</p>
           <div className="grid grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-2 gap-y-4 mb-6">
-          <div className="flex items-center gap-2 grayscale hover:grayscale-0 brightness-[20%] hover:brightness-100 cursor-pointer font-medium">
+            <div className="flex items-center gap-2 grayscale hover:grayscale-0 brightness-[20%] hover:brightness-100 cursor-pointer font-medium">
               <Image
                 src={"/icons/react-color.svg"}
                 className="h-5 w-5"
@@ -119,6 +121,7 @@ const About = () => {
             resume
           </Link>
         </div>
+
         {/* <div className="w-full flex justify-end mb-4">
           <div className="h-44 w-44 relative -m-8">
             <Image
