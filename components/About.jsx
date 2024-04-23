@@ -13,7 +13,7 @@ const About = () => {
   return (
     <>
       <div
-        className={`h-screen overflow-x-hidden overflow-y-auto relative flex flex-col justify-center gap-8 px-24 max-lg:px-16 max-md:px-12 max-sm:px-4 mt-2 max-sm:mt-16 ${
+        className={`h-screen overflow-x-hidden overflow-y-auto relative flex flex-col justify-center gap-8 px-24 max-lg:px-16 max-md:px-12 max-sm:px-4 max-sm:mt-16 ${
           isActive ? "slide-out-top" : "slide-in-bottom"
         } ${pageChanged ? "hidden" : ""}`}
       >

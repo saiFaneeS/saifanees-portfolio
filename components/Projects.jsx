@@ -26,13 +26,26 @@ const Projects = () => {
       url: "https://www.ohghad.org",
     },
   ];
-  const [linkHover, setLinkHover] = useState(false);
-  const { isActive, pageChanged, setPageChanged } = useNavbar();
-  useEffect(() => {
-    setPageChanged(false);
-  }, []);
 
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+  const { isActive, pageChanged, setPageChanged } = useNavbar();
+  
+  useEffect(() => {
+    setPageChanged(false);
+
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const index = Math.floor(scrollTop / windowHeight);
+      setCurrentProjectIndex(index);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleProjectChange = (index) => {
     setCurrentProjectIndex(index);
@@ -45,28 +58,24 @@ const Projects = () => {
           isActive ? "slide-out-top" : "slide-in-bottom"
         } ${pageChanged ? "hidden" : ""}`}
       >
-        <div className="w-1/2 max-sm:w-2/3 shrink-0 aspect-video overflow-hidden relative transition-all border border-gray-900">
+        <div className="w-1/2 max-sm:w-4/5 shrink-0 aspect-video overflow-hidden relative transition-all border border-gray-900">
           <Link
-            onMouseOver={() => setLinkHover(true)}
-            onMouseOut={() => setLinkHover(false)}
             href={projects[currentProjectIndex]?.url}
             target="_blank"
           >
             <button
-              className={`bg-gray-950 text-white text-sm py-2 px-4 font-medium absolute bottom-0 left-1/2 -translate-x-1/2 ${
-                linkHover ? "bg-opacity-80" : "bg-opacity-70"
-              } transition-all w-full`}
+              className="bg-gray-950 text-white text-sm py-2 px-4 font-medium absolute bottom-0 left-1/2 -translate-x-1/2 bg-opacity-70 hover:bg-opacity-80 transition-all w-full"
             >
               Visit
             </button>
-            <Image
-              src={projects[currentProjectIndex]?.image}
-              alt=""
-              width={"1000"}
-              height={"1000"}
-              className="w-full h-full object-cover"
-            />
           </Link>
+          <Image
+            src={projects[currentProjectIndex]?.image}
+            alt=""
+            width={"1000"}
+            height={"1000"}
+            className="w-full h-full object-cover"
+          />
         </div>
         <div className="flex flex-col w-full">
           <div className="flex gap-6 justify-between items-center">
