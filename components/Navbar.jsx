@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`fixed top-0 w-full flex gap-4 items-center justify-between px-24 max-lg:px-16 max-md:px-12 max-sm:px-4 pt-24 z-20`}
+        className={`fixed top-0 w-full flex gap-4 items-center justify-between px-24 max-lg:px-16 max-md:px-12 max-sm:px-4 pt-24 max-md:pt-20 max-sm:pt-6 z-20`}
       >
         <Link href={"/"} className="text-lg font-bold">
           SAIF ANEES

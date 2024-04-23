@@ -26,7 +26,7 @@ export default function Hero() {
             STACK
           </h1>
         </div>
-        <div className="overflow-hidden sm:-mr-4">
+        <div className="overflow-hidden -mr-4">
           <h1 className="leading-none text-slide-in-bottom max-sm:break-words">
             DEVELOPER
           </h1>
