@@ -75,7 +75,7 @@ const Projects = () => {
           <div className="h-[2px] w-full bg-current mb-4"></div>
           {projects.map((project, index) => (
             <div
-              onClick={() => handleProjectChange(index)}
+              onClick={() => setCurrentProjectIndex(index)}
               key={index}
               className={`cursor-pointer h-full w-full p-2 font-medium transition-all ${
                 index === currentProjectIndex ? "bg-gray-950 text-white" : ""
