@@ -12,7 +12,7 @@ export default function Hero() {
 
   return (
     <div
-      className={`h-screen flex flex-col justify-start overflow-hidden px-24 max-lg:px-16 max-md:px-12 max-sm:px-4 pt-44 absolute w-full ${
+      className={`h-screen max-sm:h-[90vh] flex flex-col justify-start overflow-hidden px-24 max-lg:px-16 max-md:px-12 max-sm:px-4 pt-44 absolute w-full ${
         isActive ? "slide-out-top" : "slide-in-bottom"
       } ${pageChanged ? "hidden" : ""}`}
     >

@@ -49,7 +49,7 @@ const Projects = () => {
   return (
     <>
       <div
-        className={`h-screen flex max-md:flex-col justify-center items-end max-md:items-start gap-8 max-md:gap-4 px-24 max-lg:px-16 max-md:px-12 max-sm:px-4 py-24 max-sm:mt-4 max-md:pb-0 relative w-full ${
+        className={`h-screen max-sm:h-[90vh] flex max-md:flex-col justify-center items-end max-md:items-start gap-8 max-md:gap-4 px-24 max-lg:px-16 max-md:px-12 max-sm:px-4 py-24 max-sm:mt-4 max-md:pb-0 relative w-full ${
           isActive ? "slide-out-top" : "slide-in-bottom"
         } ${pageChanged ? "hidden" : ""}`}
       >

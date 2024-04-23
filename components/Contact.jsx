@@ -12,7 +12,7 @@ const Contact = () => {
   return (
     <>
       <div
-        className={`h-screen overflow-hidden relative w-full flex flex-col justify-center gap-8 px-24 max-lg:px-16 max-md:px-12 max-sm:px-4 ${
+        className={`h-screen max-sm:h-[90vh] overflow-hidden relative w-full flex flex-col justify-center gap-8 px-24 max-lg:px-16 max-md:px-12 max-sm:px-4 ${
           isActive ? "slide-out-top" : "slide-in-bottom"
         } ${pageChanged ? "hidden" : ""}`}
       >

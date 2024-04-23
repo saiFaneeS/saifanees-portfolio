@@ -13,11 +13,11 @@ const About = () => {
   return (
     <>
       <div
-        className={`h-screen overflow-x-hidden overflow-y-auto relative flex flex-col justify-center gap-8 px-24 max-lg:px-16 max-md:px-12 max-sm:px-4 max-sm:mt-16 ${
+        className={`h-screen max-sm:h-[90vh] overflow-x-hidden overflow-y-auto relative flex flex-col justify-center gap-8 px-24 max-lg:px-16 max-md:px-12 max-sm:px-4 max-sm:mt-8 ${
           isActive ? "slide-out-top" : "slide-in-bottom"
         } ${pageChanged ? "hidden" : ""}`}
       >
-        <div className="fixed nav-gradient w-full h-28 top-0 left-0 md:hidden overflow-hidden"></div>
+        <div className="fixed nav-gradient w-full h-24 blur-lg top-0 left-0 md:hidden overflow-hidden"></div>
 
         <div className="h-full w-full flex flex-col justify-center lg:w-4/5">
           <h2 className="text-3xl font-semibold">About </h2>
