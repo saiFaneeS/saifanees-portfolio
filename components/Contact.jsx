@@ -18,7 +18,7 @@ const Contact = () => {
       >
         <div className="h-full w-full flex flex-col justify-center mt-20">
           <h2 className="text-3xl font-semibold">Contact</h2>
-          <div className="h-[2px] w-full bg-current mb-6"></div>
+          <div className="h-[2px] shrink-0 w-full bg-current mb-6 mt-2"></div>
           <div className="flex flex-wrap justify-between items-center gap-6">
             <div className="flex flex-wrap gap-x-6 gap-y-3 items-start leading-none max-sm:flex-col">
               <p className="text-lg font-semibold">MAIL</p>

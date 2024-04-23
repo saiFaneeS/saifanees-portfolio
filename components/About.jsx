@@ -21,7 +21,7 @@ const About = () => {
 
         <div className="h-full w-full flex flex-col justify-center lg:w-4/5 pt-16">
           <h2 className="text-3xl font-semibold">About </h2>
-          <div className="h-[2px] w-full bg-current mb-4 shrink-0"></div>
+          <div className="h-[2px] shrink-0 w-full bg-current mb-4"></div>
           <p className="text-base">
             Hey, I&apos;m Saif Anees and I&apos;m a full-stack web engineer with
             a primary focus on building user friendly websites. I Love Working

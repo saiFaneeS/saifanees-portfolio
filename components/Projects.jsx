@@ -72,7 +72,7 @@ const Projects = () => {
             <h2 className="text-3xl font-semibold">Works</h2>
             <p className="text-lg font-medium">{projects?.length}</p>
           </div>
-          <div className="h-[2px] w-full bg-current mb-4"></div>
+          <div className="h-[2px] shrink-0 w-full bg-current mb-4"></div>
           {projects.map((project, index) => (
             <div
               onClick={() => setCurrentProjectIndex(index)}
