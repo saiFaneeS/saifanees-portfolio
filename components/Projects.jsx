@@ -42,6 +42,10 @@ const Projects = () => {
     };
   }, []);
 
+  const handleProjectChange = (index) => {
+    setCurrentProjectIndex(index);
+  };
+
   return (
     <>
       <div
