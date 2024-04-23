@@ -5,10 +5,26 @@ import { useNavbar } from "@/context/Navbar";
 
 const Projects = () => {
   const projects = [
-    { name: "Agency", image: "/saif.jpg" },
-    { name: "MS Real Estate", image: "/husban.png" },
-    { name: "Modern Standards Luxury Motors", image: "/saif.jpg" },
-    { name: "Oh GHAD!", image: "/husban.png" },
+    {
+      name: "Agency",
+      image: "/projects/noblesoft.jpg",
+      url: "https://noblesoft.vercel.app",
+    },
+    {
+      name: "MS Real Estate",
+      image: "/projects/msre.jpg",
+      url: "https://www.msrealestate.ae",
+    },
+    {
+      name: "Modern Standards Luxury Motors",
+      image: "/projects/mslm.jpg",
+      url: "https://modernstandards.ae",
+    },
+    {
+      name: "Oh GHAD!",
+      image: "/projects/ohghad.png",
+      url: "https://www.ohghad.org",
+    },
   ];
 
   const { isActive, pageChanged, setPageChanged } = useNavbar();
@@ -17,19 +33,10 @@ const Projects = () => {
   }, []);
 
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
-  const [scrollPosition, setScrollPosition] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setScrollPosition(scrollTop);
-      const index = Math.floor(scrollTop / window.innerHeight);
-      setCurrentProjectIndex(index);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const handleProjectChange = (index) => {
+    setCurrentProjectIndex(index);
+  };
 
   return (
     <>
@@ -38,18 +45,20 @@ const Projects = () => {
           isActive ? "slide-out-top" : "slide-in-bottom"
         } ${pageChanged ? "hidden" : ""}`}
       >
-        <Link
-          href={"/"}
-          className="w-1/2 max-sm:w-2/3 shrink-0 aspect-video overflow-hidden relative hover:brightness-90 cursor-pointer transition-all"
-        >
-          <Image
-            src={projects[currentProjectIndex]?.image}
-            alt=""
-            width={"1000"}
-            height={"1000"}
-            className="w-full h-full object-cover"
-          />
-        </Link>
+        <div className="w-1/2 max-sm:w-2/3 shrink-0 aspect-video overflow-hidden relative transition-all">
+          <Link href={projects[currentProjectIndex]?.url} target="_blank">
+            <button className="bg-[#f8f8f8] py-2 px-4 font-medium absolute bottom-0 left-1/2 -translate-x-1/2 bg-opacity-70 hover:bg-opacity-80 transition-all w-full">
+              Visit
+            </button>
+            <Image
+              src={projects[currentProjectIndex]?.image}
+              alt=""
+              width={"1000"}
+              height={"1000"}
+              className="w-full h-full object-cover"
+            />
+          </Link>
+        </div>
         <div className="flex flex-col w-full">
           <div className="flex gap-6 justify-between items-center">
             <h2 className="text-4xl font-semibold">Works</h2>
@@ -59,8 +68,8 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              onMouseOver={() => setCurrentProjectIndex(index)}
-              className={`h-full w-full p-2 transition-all ${
+              onClick={() => handleProjectChange(index)}
+              className={`cursor-pointer h-full w-full p-2 font-medium transition-all ${
                 index === currentProjectIndex ? "bg-gray-950 text-white" : ""
               }`}
             >

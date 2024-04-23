@@ -17,7 +17,7 @@ const About = () => {
           isActive ? "slide-out-top" : "slide-in-bottom"
         } ${pageChanged ? "hidden" : ""}`}
       >
-        <div className="fixed nav-gradient w-full h-48 top-0 left-0 md:hidden"></div>
+        <div className="fixed nav-gradient w-full h-48 top-0 left-0 md:hidden overflow-hidden"></div>
 
         <div className="h-full w-full flex flex-col justify-center lg:w-4/5 pt-16">
           <h2 className="text-3xl font-semibold">About </h2>
