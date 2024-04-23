@@ -99,6 +99,7 @@ const Navbar = () => {
         </div>
         <div className="flex gap-6 items-center">
           <Link
+          target="_blank"
             href={"/https://github.com/saiFaneeS"}
             className="flex gap-2 items-center text-base font-semibold"
           >

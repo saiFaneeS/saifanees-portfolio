@@ -29,7 +29,7 @@ const Projects = () => {
 
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
   const { isActive, pageChanged, setPageChanged } = useNavbar();
-  
+
   useEffect(() => {
     setPageChanged(false);
 
@@ -59,13 +59,8 @@ const Projects = () => {
         } ${pageChanged ? "hidden" : ""}`}
       >
         <div className="w-1/2 max-sm:w-4/5 shrink-0 aspect-video overflow-hidden relative transition-all border border-gray-900">
-          <Link
-            href={projects[currentProjectIndex]?.url}
-            target="_blank"
-          >
-            <button
-              className="bg-gray-950 text-white text-sm py-2 px-4 font-medium absolute bottom-0 left-1/2 -translate-x-1/2 bg-opacity-70 hover:bg-opacity-80 transition-all w-full"
-            >
+          <Link href={projects[currentProjectIndex]?.url} target="_blank">
+            <button className="bg-gray-950 text-white text-sm py-2 px-4 font-medium absolute bottom-0 left-1/2 -translate-x-1/2 bg-opacity-70 hover:bg-opacity-80 transition-all w-full">
               Visit
             </button>
           </Link>
