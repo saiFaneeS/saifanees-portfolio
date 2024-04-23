@@ -26,7 +26,7 @@ const Projects = () => {
       url: "https://www.ohghad.org",
     },
   ];
-
+  const [linkHover, setLinkHover] = useState(false);
   const { isActive, pageChanged, setPageChanged } = useNavbar();
   useEffect(() => {
     setPageChanged(false);
@@ -41,13 +41,22 @@ const Projects = () => {
   return (
     <>
       <div
-        className={`h-screen flex max-md:flex-col justify-center items-end max-sm:items-start gap-8 max-md:gap-4 px-24 max-lg:px-16 max-md:px-12 max-sm:px-4 py-24 max-sm:mt-4 max-md:pb-0 relative w-full ${
+        className={`h-screen flex max-md:flex-col justify-center items-end max-md:items-start gap-8 max-md:gap-4 px-24 max-lg:px-16 max-md:px-12 max-sm:px-4 py-24 max-sm:mt-4 max-md:pb-0 relative w-full ${
           isActive ? "slide-out-top" : "slide-in-bottom"
         } ${pageChanged ? "hidden" : ""}`}
       >
-        <div className="w-1/2 max-sm:w-2/3 shrink-0 aspect-video overflow-hidden relative transition-all">
-          <Link href={projects[currentProjectIndex]?.url} target="_blank">
-            <button className="bg-[#f8f8f8] py-2 px-4 font-medium absolute bottom-0 left-1/2 -translate-x-1/2 bg-opacity-70 hover:bg-opacity-80 transition-all w-full">
+        <div className="w-1/2 max-sm:w-2/3 shrink-0 aspect-video overflow-hidden relative transition-all border border-gray-900">
+          <Link
+            onMouseOver={() => setLinkHover(true)}
+            onMouseOut={() => setLinkHover(false)}
+            href={projects[currentProjectIndex]?.url}
+            target="_blank"
+          >
+            <button
+              className={`bg-gray-950 text-white text-sm py-2 px-4 font-medium absolute bottom-0 left-1/2 -translate-x-1/2 ${
+                linkHover ? "bg-opacity-80" : "bg-opacity-70"
+              } transition-all w-full`}
+            >
               Visit
             </button>
             <Image
@@ -61,7 +70,7 @@ const Projects = () => {
         </div>
         <div className="flex flex-col w-full">
           <div className="flex gap-6 justify-between items-center">
-            <h2 className="text-4xl font-semibold">Works</h2>
+            <h2 className="text-3xl font-semibold">Works</h2>
             <p className="text-lg font-medium">{projects?.length}</p>
           </div>
           <div className="h-[2px] w-full bg-current mb-4"></div>
