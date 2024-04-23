@@ -34,19 +34,6 @@ const Projects = () => {
 
   useEffect(() => {
     setPageChanged(false);
-
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const index = Math.floor(scrollTop / windowHeight);
-      setCurrentProjectIndex(index);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
   }, []);
 
   const handleProjectChange = (index) => {
@@ -68,7 +55,9 @@ const Projects = () => {
           className="w-1/2 max-sm:w-4/5 shrink-0 aspect-video overflow-hidden relative transition-all border border-gray-900"
         >
           <button
-            className={`flex gap-1 items-center justify-center bg-gray-950 text-white text-sm py-2 px-4 font-medium absolute bottom-0 left-1/2 -translate-x-1/2 ${linkHover ? "bg-opacity-80" : "bg-opacity-60"} transition-all w-full`}
+            className={`flex gap-1 items-center justify-center bg-gray-950 text-white text-sm py-2 px-4 font-medium absolute bottom-0 left-1/2 -translate-x-1/2 ${
+              linkHover ? "bg-opacity-80" : "bg-opacity-60"
+            } transition-all w-full`}
           >
             Visit
             <ArrowUpRightIcon size={18} />
