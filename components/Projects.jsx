@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useNavbar } from "@/context/Navbar";
+import { ArrowUpRightIcon } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -27,6 +28,7 @@ const Projects = () => {
     },
   ];
 
+  const [linkHover, setLinkHover] = useState(false);
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
   const { isActive, pageChanged, setPageChanged } = useNavbar();
 
@@ -58,12 +60,19 @@ const Projects = () => {
           isActive ? "slide-out-top" : "slide-in-bottom"
         } ${pageChanged ? "hidden" : ""}`}
       >
-        <div className="w-1/2 max-sm:w-4/5 shrink-0 aspect-video overflow-hidden relative transition-all border border-gray-900">
-          <Link href={projects[currentProjectIndex]?.url} target="_blank">
-            <button className="bg-gray-950 text-white text-sm py-2 px-4 font-medium absolute bottom-0 left-1/2 -translate-x-1/2 bg-opacity-70 hover:bg-opacity-80 transition-all w-full">
-              Visit
-            </button>
-          </Link>
+        <Link
+          href={projects[currentProjectIndex]?.url}
+          target="_blank"
+          onMouseOver={() => setLinkHover(true)}
+          onMouseOut={() => setLinkHover(false)}
+          className="w-1/2 max-sm:w-4/5 shrink-0 aspect-video overflow-hidden relative transition-all border border-gray-900"
+        >
+          <button
+            className={`flex gap-1 items-center justify-center bg-gray-950 text-white text-sm py-2 px-4 font-medium absolute bottom-0 left-1/2 -translate-x-1/2 ${linkHover ? "bg-opacity-80" : "bg-opacity-60"} transition-all w-full`}
+          >
+            Visit
+            <ArrowUpRightIcon size={18} />
+          </button>
           <Image
             src={projects[currentProjectIndex]?.image}
             alt=""
@@ -71,7 +80,7 @@ const Projects = () => {
             height={"1000"}
             className="w-full h-full object-cover"
           />
-        </div>
+        </Link>
         <div className="flex flex-col w-full">
           <div className="flex gap-6 justify-between items-center">
             <h2 className="text-3xl font-semibold">Works</h2>
@@ -82,7 +91,7 @@ const Projects = () => {
             <div
               key={index}
               onClick={() => handleProjectChange(index)}
-              className={`cursor-pointer h-full w-full p-2 font-medium transition-all ${
+              className={`cursor-pointer h-full w-full p-2 px-3 font-medium transition-all ${
                 index === currentProjectIndex ? "bg-gray-950 text-white" : ""
               }`}
             >
