@@ -34,10 +34,10 @@ const Navbar = () => {
         <div className="text-lg font-bold flex gap-4 items-center justify-center">
           <span>{currentTime}</span>
           <span
-            className="cursor-pointer"
+            className="cursor-pointer hover:bg-gray-200 p-1 rounded-md transition-all"
             onClick={() => setIsActive(!isActive)}
           >
-            <LayoutGrid size={32} />
+            <LayoutGrid size={36} />
           </span>
         </div>
       </div>
