@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useNavbar } from "@/context/Navbar";
+import { ArrowBigDown, ArrowBigUp } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -37,8 +38,23 @@ const Projects = () => {
       setCurrentProjectIndex((prevIndex) => (prevIndex + 1) % projects.length);
     }, 10000);
 
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+        setCurrentProjectIndex(
+          (prevIndex) => (prevIndex - 1 + projects.length) % projects.length
+        );
+      } else if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+        setCurrentProjectIndex(
+          (prevIndex) => (prevIndex + 1) % projects.length
+        );
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
     return () => {
       clearInterval(intervalId);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
@@ -69,21 +85,33 @@ const Projects = () => {
         </div>
         <div className="flex flex-col w-full">
           <div className="flex gap-6 justify-between items-center">
-            <h2 className="text-3xl font-semibold">Works</h2>
-            <p className="text-lg font-medium">{projects?.length}</p>
+            <div className="flex items-baseline gap-4">
+              <h2 className="text-3xl font-semibold">Works</h2>
+              {/* <p className="text-2xl font-medium">{projects?.length}</p> */}
+            </div>
+            <div>
+              <ArrowBigUp size={18} />
+              <ArrowBigDown size={18} />
+            </div>
           </div>
           <div className="h-[2px] shrink-0 w-full bg-current mb-4"></div>
-          {projects.map((project, index) => (
-            <div
-              onClick={() => setCurrentProjectIndex(index)}
-              key={index}
-              className={`cursor-pointer h-full w-full p-2 font-medium transition-all ${
-                index === currentProjectIndex ? "bg-gray-950 text-white" : ""
-              }`}
-            >
-              <span>{project.name}</span>
+          <div className="">
+            <div className="w-full">
+              {projects.map((project, index) => (
+                <div
+                  onClick={() => setCurrentProjectIndex(index)}
+                  key={index}
+                  className={`cursor-pointer w-full p-2 font-medium transition-all ${
+                    index === currentProjectIndex
+                      ? "bg-gray-950 text-white"
+                      : ""
+                  }`}
+                >
+                  <span>{project.name}</span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </>
