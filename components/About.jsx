@@ -72,7 +72,7 @@ const About = () => {
               />
               Shadcn
             </div>
-            <div className="flex items-center gap-2 grayscale hover:grayscale-0 brightness-[20%] hover:brightness-100 cursor-pointer font-medium">
+            {/* <div className="flex items-center gap-2 grayscale hover:grayscale-0 brightness-[20%] hover:brightness-100 cursor-pointer font-medium">
               <Image
                 src={"/icons/mongodb-color.svg"}
                 className="h-5 w-5"
@@ -81,7 +81,7 @@ const About = () => {
                 width={"100"}
               />
               MongoDB
-            </div>
+            </div> */}
             <div className="flex items-center gap-2 grayscale hover:grayscale-0 brightness-[20%] hover:brightness-100 cursor-pointer font-medium">
               <Image
                 src={"/icons/nodedotjs-color.svg"}
@@ -111,6 +111,16 @@ const About = () => {
                 width={"100"}
               />
               GitHub
+            </div>
+            <div className="flex items-center gap-2 grayscale hover:grayscale-0 brightness-[90%] hover:brightness-100 cursor-pointer font-medium">
+              {/* <Image
+                src={"/icons/github-color.svg"}
+                className="h-5 w-5"
+                alt=""
+                height={"100"}
+                width={"100"}
+              /> */}
+              Wordpress
             </div>
           </div>
           {/* <Link

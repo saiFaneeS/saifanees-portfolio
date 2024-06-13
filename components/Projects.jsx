@@ -10,21 +10,25 @@ const Projects = () => {
       name: "Agency",
       image: "/projects/noblesoft.jpg",
       url: "https://noblesoft.vercel.app",
+      icons: "nextdotjs-color.svg",
     },
     {
       name: "MS Real Estate",
       image: "/projects/msre.jpg",
       url: "https://www.msrealestate.ae",
+      icons: "nextdotjs-color.svg",
     },
     {
       name: "Modern Standards Luxury Motors",
       image: "/projects/mslm.jpg",
       url: "https://modernstandards.ae",
+      icons: "nextdotjs-color.svg",
     },
     {
       name: "Oh GHAD!",
       image: "/projects/ohghad.png",
       url: "https://www.ohghad.org",
+      // icons: "nextdojs-color.svg",
     },
   ];
 
@@ -101,13 +105,28 @@ const Projects = () => {
                 <div
                   onClick={() => setCurrentProjectIndex(index)}
                   key={index}
-                  className={`cursor-pointer w-full p-2 font-medium transition-all ${
+                  className={`flex justify-between cursor-pointer w-full p-2 font-medium transition-all ${
                     index === currentProjectIndex
                       ? "bg-gray-950 text-white"
-                      : ""
+                      : "hover:bg-gray-200"
                   }`}
                 >
                   <span>{project.name}</span>
+                  {project.icons &&
+                  <div className="flex items-center gap-2 grayscale hover:grayscale-0">
+                    <Image
+                      src={`/icons/${project.icons}`}
+                      className={`h-5 w-5 ${
+                        index === currentProjectIndex
+                          ? "invert"
+                          : ""
+                      }`}
+                      alt=""
+                      height={"100"}
+                      width={"100"}
+                    />
+                  </div>
+                      }
                 </div>
               ))}
             </div>

@@ -1,9 +1,14 @@
 import Navbar from "@/components/Navbar";
+import Head from "next/head";
 import React from "react";
 
 const Layout = ({ children }) => {
   return (
     <div className="relative">
+      <Head>
+        <title>Saif Anees | Portfolio</title>
+        <link rel="favicon" href="/saif.jpg"/>
+      </Head>
       <Navbar />
       <div>{children}</div>
       {/* <>
