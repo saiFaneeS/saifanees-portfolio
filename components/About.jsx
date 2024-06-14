@@ -113,13 +113,13 @@ const About = () => {
               GitHub
             </div>
             <div className="flex items-center gap-2 grayscale hover:grayscale-0 brightness-[90%] hover:brightness-100 cursor-pointer font-medium">
-              {/* <Image
-                src={"/icons/github-color.svg"}
+              <Image
+                src={"/icons/wp.svg"}
                 className="h-5 w-5"
                 alt=""
                 height={"100"}
                 width={"100"}
-              /> */}
+              />
               Wordpress
             </div>
           </div>

@@ -28,7 +28,7 @@ const Projects = () => {
       name: "Oh GHAD!",
       image: "/projects/ohghad.png",
       url: "https://www.ohghad.org",
-      // icons: "nextdojs-color.svg",
+      icons: "wp.svg",
     },
   ];
 
@@ -112,21 +112,19 @@ const Projects = () => {
                   }`}
                 >
                   <span>{project.name}</span>
-                  {project.icons &&
-                  <div className="flex items-center gap-2 grayscale hover:grayscale-0">
-                    <Image
-                      src={`/icons/${project.icons}`}
-                      className={`h-5 w-5 ${
-                        index === currentProjectIndex
-                          ? "invert"
-                          : ""
-                      }`}
-                      alt=""
-                      height={"100"}
-                      width={"100"}
-                    />
-                  </div>
-                      }
+                  {project.icons && (
+                    <div className="flex items-center gap-2 grayscale hover:grayscale-0">
+                      <Image
+                        src={`/icons/${project.icons}`}
+                        className={`h-5 w-5 ${
+                          index === currentProjectIndex ? "invert" : "contrast-150"
+                        }`}
+                        alt=""
+                        height={"100"}
+                        width={"100"}
+                      />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
