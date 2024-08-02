@@ -12,11 +12,11 @@ const Navbar = () => {
   const path = router.pathname;
 
   useEffect(() => {
-      const date = new Date();
-      const hours = date.getHours();
-      const minutes = date.getMinutes();
-      const formattedTime = `${hours}:${minutes < 10 ? "0" : ""}${minutes}`;
-      setCurrentTime(formattedTime);
+    const date = new Date();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const formattedTime = `${hours}:${minutes < 10 ? "0" : ""}${minutes}`;
+    setCurrentTime(formattedTime);
   }, []);
 
   return (
@@ -95,20 +95,20 @@ const Navbar = () => {
         </div>
         <div className="flex gap-6 items-center">
           <Link
-          target="_blank"
+            target="_blank"
             href={"https://github.com/saiFaneeS"}
             className="flex gap-2 items-center text-base font-semibold"
           >
             <ArrowUpRightFromCircle size={18} strokeWidth={2.4} />
             Github
           </Link>
-          {/* <Link
-            href={"/"}
+          <Link
+            href={"https://wa.me/03283490764"}
             className="flex gap-2 items-center text-base font-semibold"
           >
             <ArrowUpRightFromCircle size={18} strokeWidth={2.4} />
-            Behance
-          </Link> */}
+            Whatsapp
+          </Link>
         </div>
       </div>
     </>

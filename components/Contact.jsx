@@ -29,7 +29,7 @@ const Contact = () => {
                 saifanees11@gmail.com
               </Link>
             </div>
-            <div className="flex flex-wrap gap-x-6 gap-y-3 items-start max-sm:flex-col">
+            <div className="flex flex-wrap gap-x-6 gap-y-3 items-start leading-none max-sm:flex-col">
               <p className="text-lg font-semibold text-nowrap">
                 SOCAIL MEDIA
               </p>

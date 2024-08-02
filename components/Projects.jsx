@@ -14,7 +14,7 @@ const Projects = () => {
     },
     {
       name: "MS Real Estate",
-      image: "/projects/msre.jpg",
+      image: "/projects/msre2.jpeg",
       url: "https://www.msrealestate.ae",
       icons: "nextdotjs-color.svg",
     },
@@ -26,7 +26,7 @@ const Projects = () => {
     },
     {
       name: "Oh GHAD!",
-      image: "/projects/ohghad.png",
+      image: "/projects/ohghad1.jpeg",
       url: "https://www.ohghad.org",
       icons: "wp.svg",
     },
