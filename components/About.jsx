@@ -22,12 +22,13 @@ const About = () => {
         <div className="h-full w-full flex flex-col justify-center lg:w-4/5">
           <h2 className="text-3xl font-semibold">About </h2>
           <div className="h-[2px] shrink-0 w-full bg-current mb-4"></div>
-          <p className="text-base">
-            Hey, I&apos;m Saif Anees and I&apos;m a full-stack web engineer with
-            a primary focus on building user friendly websites. I Love Working
-            at the intersection Of Creativity. I have a experience building
-            websites for small to medium-sized businesses. When I&apos;m not
-            building, I&apos;m learning new stuff.
+          <p className="text-base ">
+            Hey, I&apos;m Saif Anees and I&apos;m a full-stack engineer with a
+            primary focus on building user-friendly websites. My visual design
+            expertise allow my work to be detail oriented. I have experience
+            building websites for small to medium-sized businesses with
+            consistent positive client satisfaction. When I&apos;m not building,
+            I&apos;m learning new stuff.
           </p>
           <p className="text-lg font-semibold text-slate-950 my-4">Tools</p>
           <div className="grid grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-2 gap-y-4 mb-6">

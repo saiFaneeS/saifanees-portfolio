@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className="text-lg font-bold flex gap-4 items-center justify-center">
           <span>{currentTime}</span>
           <span
-            className="cursor-pointer hover:bg-gray-200 hover:bg-opacity-80 p-1 rounded-md transition-all"
+            className="cursor-pointer hover:bg-gray-200 hover:bg-opacity-50 p-1 rounded-md transition-all"
             onClick={() => setIsActive(!isActive)}
           >
             <LayoutGrid size={36} />
