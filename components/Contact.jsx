@@ -30,7 +30,7 @@ const Contact = () => {
               </Link>
             </div>
             <div className="flex flex-wrap gap-x-6 gap-y-3 items-start max-sm:flex-col">
-              <p className="text-lg font-semibold text-nowrap leading-none">
+              <p className="text-lg font-semibold text-nowrap">
                 SOCAIL MEDIA
               </p>
               <ul className="flex flex-wrap leading-none gap-6">
