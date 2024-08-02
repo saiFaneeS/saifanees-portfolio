@@ -52,6 +52,14 @@ const Contact = () => {
                   <ArrowUpRightFromCircle size={18} strokeWidth={2.4} />
                   Instagram
                 </Link>
+                <Link
+                  target="_blank"
+                  href={"https://wa.me/+9203283490764"}
+                  className="flex gap-2 items-center text-lg font-medium"
+                >
+                  <ArrowUpRightFromCircle size={18} strokeWidth={2.4} />
+                  Whatsapp
+                </Link>
               </ul>
             </div>
           </div>

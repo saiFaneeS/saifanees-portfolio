@@ -38,10 +38,6 @@ const Projects = () => {
   useEffect(() => {
     setPageChanged(false);
 
-    const intervalId = setInterval(() => {
-      setCurrentProjectIndex((prevIndex) => (prevIndex + 1) % projects.length);
-    }, 10000);
-
     const handleKeyDown = (e) => {
       if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
         setCurrentProjectIndex(
@@ -57,7 +53,6 @@ const Projects = () => {
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      clearInterval(intervalId);
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
@@ -117,7 +112,9 @@ const Projects = () => {
                       <Image
                         src={`/icons/${project.icons}`}
                         className={`h-5 w-5 ${
-                          index === currentProjectIndex ? "invert" : "contrast-150"
+                          index === currentProjectIndex
+                            ? "invert"
+                            : "contrast-150"
                         }`}
                         alt=""
                         height={"100"}
