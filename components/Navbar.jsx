@@ -103,7 +103,7 @@ const Navbar = () => {
             Github
           </Link>
           <Link
-            href={"https://wa.me/03283490764"}
+            href={"https://wa.me/+9203283490764"}
             className="flex gap-2 items-center text-base font-semibold"
           >
             <ArrowUpRightFromCircle size={18} strokeWidth={2.4} />
