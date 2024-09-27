@@ -103,7 +103,7 @@ export default function Hero() {
             ].map((item, index) => (
               <CarouselItem
                 key={index}
-                className="basis-1/2 sm:basis-1/2 md:basis-1/3 pl-0"
+                className="basis-full sm:basis-1/2 md:basis-1/3 pl-0"
               >
                 <div
                   className="p-4 bg-transparent border-r"
