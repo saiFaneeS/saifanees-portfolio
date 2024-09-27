@@ -39,7 +39,7 @@ const Contact = () => {
                   href={
                     "https://www.linkedin.com/in/saif-anees/?originalSubdomain=pk"
                   }
-                  className="flex gap-2 items-center text-lg font-medium"
+                  className="flex gap-2 items-center text-lg font-medium hover:underline"
                 >
                   <ArrowUpRightFromCircle size={18} strokeWidth={2.4} />
                   Linkedin
@@ -47,7 +47,7 @@ const Contact = () => {
                 <Link
                   target="_blank"
                   href={"https://www.instagram.com/saifullah_anees/"}
-                  className="flex gap-2 items-center text-lg font-medium"
+                  className="flex gap-2 items-center text-lg font-medium hover:underline"
                 >
                   <ArrowUpRightFromCircle size={18} strokeWidth={2.4} />
                   Instagram
@@ -55,7 +55,7 @@ const Contact = () => {
                 <Link
                   target="_blank"
                   href={"https://wa.me/+9203283490764"}
-                  className="flex gap-2 items-center text-lg font-medium"
+                  className="flex gap-2 items-center text-lg font-medium hover:underline"
                 >
                   <ArrowUpRightFromCircle size={18} strokeWidth={2.4} />
                   Whatsapp

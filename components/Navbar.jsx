@@ -97,14 +97,14 @@ const Navbar = () => {
           <Link
             target="_blank"
             href={"https://github.com/saiFaneeS"}
-            className="flex gap-2 items-center text-base font-semibold"
+            className="flex gap-2 items-center text-base font-semibold hover:underline"
           >
             <ArrowUpRightFromCircle size={18} strokeWidth={2.4} />
             Github
           </Link>
           <Link
             href={"https://wa.me/+9203283490764"}
-            className="flex gap-2 items-center text-base font-semibold"
+            className="flex gap-2 items-center text-base font-semibold hover:underline"
           >
             <ArrowUpRightFromCircle size={18} strokeWidth={2.4} />
             Whatsapp

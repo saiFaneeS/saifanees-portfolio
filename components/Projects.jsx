@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useNavbar } from "@/context/Navbar";
-import { ArrowBigDown, ArrowBigUp } from "lucide-react";
+import { ArrowBigDown, ArrowBigUp, Link2 } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -11,24 +11,35 @@ const Projects = () => {
       image: "/projects/noblesoft.jpg",
       url: "https://noblesoft.vercel.app",
       icons: "nextdotjs-color.svg",
+      year: "2023",
+    },
+    {
+      name: "Advance Lead Manager System",
+      image: "/projects/lms copy.jpg",
+      // url: "https://noblesoft.vercel.app",
+      icons: "nextdotjs-color.svg",
+      year: "2024",
     },
     {
       name: "MS Real Estate",
       image: "/projects/msre2.jpeg",
       url: "https://www.msrealestate.ae",
       icons: "nextdotjs-color.svg",
-    },
-    {
-      name: "Modern Standards Luxury Motors",
-      image: "/projects/mslm.jpg",
-      url: "https://modernstandards.ae",
-      icons: "nextdotjs-color.svg",
+      year: "2024",
     },
     {
       name: "Oh GHAD!",
       image: "/projects/ohghad1.jpeg",
       url: "https://www.ohghad.org",
       icons: "wp.svg",
+      year: "2024",
+    },
+    {
+      name: "Modern Standards Luxury Motors",
+      image: "/projects/mslm.jpg",
+      url: "https://modernstandards.ae",
+      icons: "nextdotjs-color.svg",
+      year: "2023",
     },
   ];
 
@@ -69,11 +80,17 @@ const Projects = () => {
         } ${pageChanged ? "hidden" : ""}`}
       >
         <div className="w-1/2 max-sm:w-4/5 shrink-0 aspect-video overflow-hidden relative transition-all border border-gray-900">
-          <Link href={projects[currentProjectIndex]?.url} target="_blank">
-            <button className="bg-gray-950 text-white text-sm py-2 px-4 font-medium absolute bottom-0 left-1/2 -translate-x-1/2 bg-opacity-70 hover:bg-opacity-80 transition-all w-full">
-              Visit
-            </button>
-          </Link>
+          {/* {projects?.[currentProjectIndex]?.url && (
+            <Link
+              href={projects[currentProjectIndex]?.url}
+              target="_blank"
+              className=""
+            >
+              <button className="bg-gray-950 text-white text-sm py-2 px-4 font-medium absolute bottom-0 left-1/2 -translate-x-1/2 bg-opacity-70 hover:bg-opacity-80 transition-all w-full">
+                Visit
+              </button>
+            </Link>
+          )} */}
           <Image
             src={projects[currentProjectIndex]?.image}
             alt=""
@@ -107,7 +124,7 @@ const Projects = () => {
                   }`}
                 >
                   <span>{project.name}</span>
-                  {project.icons && (
+                  {/* {project.icons && (
                     <div className="flex items-center gap-2 grayscale hover:grayscale-0">
                       <Image
                         src={`/icons/${project.icons}`}
@@ -121,7 +138,15 @@ const Projects = () => {
                         width={"100"}
                       />
                     </div>
-                  )}
+                  )} */}
+                  <span className="flex gap-2 items-center">
+                    {project.year}
+                    {project?.url && index === currentProjectIndex && (
+                      <Link href={project?.url} target="_blank" className="hover:text-green-300">
+                        <Link2 size={20} />
+                      </Link>
+                    )}
+                  </span>
                 </div>
               ))}
             </div>
