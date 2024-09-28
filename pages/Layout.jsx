@@ -1,5 +1,8 @@
 import Navbar from "@/components/Navbar";
+import { Mail } from "lucide-react";
 import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Layout = ({ children }) => {
@@ -7,29 +10,10 @@ const Layout = ({ children }) => {
     <div className="relative">
       <Head>
         <title>Saif Anees | Portfolio</title>
-        <link rel="favicon" href="/saif.jpg"/>
+        <link rel="favicon" href="/saif.jpg" />
       </Head>
       <Navbar />
       <div>{children}</div>
-      {/* <>
-        <svg
-          viewBox="0 0 200 100"
-          xmlns="http://www.w3.org/2000/svg"
-          className="fixed h-full w-full object-fill border border-red-500 top-0 max-md:-top-[5%] left-0 -z-10 opacity-20 grayscale"
-        >
-          <filter id="noiseFilter" className="h-screen w-full">
-            <feTurbulence
-            className="h-screen w-full"
-              type="fractalNoise"
-              baseFrequency="10"
-              numOctaves="3"
-              stitchTiles="stitch"
-            />
-          </filter>
-
-          <rect className="h-screen w-screen" filter="url(#noiseFilter)" />
-        </svg>
-      </> */}
     </div>
   );
 };
