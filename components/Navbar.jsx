@@ -39,7 +39,7 @@ const Navbar = () => {
       </div>
       <div
         className={`h-screen w-full fixed left-0 bg- bg-opacity-70 backdrop-blur-md border-b border-b-black flex flex-col justify-center px-[25%] py-4 z-10 transition-all delay-75 duration-1000 ${
-          isActive ? "top-0" : "top-[-110%]"
+          isActive ? "top-0" : "top-[-160%]"
         }`}
       >
         <div className="font-semibold flex flex-col text-4xl leading-none mb-8 -ml-9 pt-20 list-none">

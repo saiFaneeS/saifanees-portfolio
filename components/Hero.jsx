@@ -101,7 +101,7 @@ export default function Hero() {
               "Provided Free Real-world Projects For Experience",
               // "Years of Solid Experience as a Developer",
             ].map((item, index) => (
-              <CarouselItem
+              <CarouselItem 
                 key={index}
                 className="basis-full sm:basis-1/2 md:basis-1/3 pl-0"
               >
