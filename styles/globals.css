@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 body {
   background-color: #f8f8f8;
